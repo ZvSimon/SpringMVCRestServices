@@ -1,5 +1,6 @@
 guru/springframework/projectLombock/model/Beer.class
 guru/springframework/projectLombock/services/BeerService.class
+guru/springframework/projectLombock/controllers/BeerController.class
 guru/springframework/projectLombock/services/BeerServiceImpl.class
 guru/springframework/projectLombock/model/BeerStyle.class
 guru/springframework/projectLombock/model/Beer$BeerBuilder.class

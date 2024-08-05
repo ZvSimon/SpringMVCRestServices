@@ -1,5 +1,6 @@
-/Users/simonchoukroun/Desktop/Project-Lombock/src/main/java/guru/springframework/projectLombock/ProjectLombockApplication.java
-/Users/simonchoukroun/Desktop/Project-Lombock/src/main/java/guru/springframework/projectLombock/model/Beer.java
-/Users/simonchoukroun/Desktop/Project-Lombock/src/main/java/guru/springframework/projectLombock/model/BeerStyle.java
-/Users/simonchoukroun/Desktop/Project-Lombock/src/main/java/guru/springframework/projectLombock/services/BeerService.java
-/Users/simonchoukroun/Desktop/Project-Lombock/src/main/java/guru/springframework/projectLombock/services/BeerServiceImpl.java
+/Users/simko/Desktop/SpringMVCRestServices/src/main/java/guru/springframework/projectLombock/ProjectLombockApplication.java
+/Users/simko/Desktop/SpringMVCRestServices/src/main/java/guru/springframework/projectLombock/controllers/BeerController.java
+/Users/simko/Desktop/SpringMVCRestServices/src/main/java/guru/springframework/projectLombock/model/Beer.java
+/Users/simko/Desktop/SpringMVCRestServices/src/main/java/guru/springframework/projectLombock/model/BeerStyle.java
+/Users/simko/Desktop/SpringMVCRestServices/src/main/java/guru/springframework/projectLombock/services/BeerService.java
+/Users/simko/Desktop/SpringMVCRestServices/src/main/java/guru/springframework/projectLombock/services/BeerServiceImpl.java

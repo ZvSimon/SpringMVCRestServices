@@ -11,8 +11,12 @@
     <groupId>guru.springframework</groupId>
     <artifactId>projectLombock</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>ProjectLombock</name>
-    <description>ProjectLombock</description>
+    <name>
+        SpringMVCRestServices
+    </name>
+    <description>
+        SpringMVCRestServices
+    </description>
     <url/>
     <licenses>
         <license/>
