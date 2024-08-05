@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>guru.springframework</groupId>
-    <artifactId>projectLombock</artifactId>
+    <artifactId>SpringMVCRestServices</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>
         SpringMVCRestServices

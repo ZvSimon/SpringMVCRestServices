@@ -1,7 +1,7 @@
-guru/springframework/projectLombock/model/Beer.class
-guru/springframework/projectLombock/services/BeerService.class
-guru/springframework/projectLombock/controllers/BeerController.class
-guru/springframework/projectLombock/services/BeerServiceImpl.class
-guru/springframework/projectLombock/model/BeerStyle.class
-guru/springframework/projectLombock/model/Beer$BeerBuilder.class
-guru/springframework/projectLombock/ProjectLombockApplication.class
+guru/springframework/springRestServices/services/BeerService.class
+guru/springframework/springRestServices/SpringMVCRestServicesApplication.class
+guru/springframework/springRestServices/model/Beer$BeerBuilder.class
+guru/springframework/springRestServices/services/BeerServiceImpl.class
+guru/springframework/springRestServices/model/Beer.class
+guru/springframework/springRestServices/controllers/BeerController.class
+guru/springframework/springRestServices/model/BeerStyle.class
