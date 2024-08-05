@@ -1,7 +1,7 @@
-package guru.springframework.projectLombock.services;
+package guru.springframework.springRestServices.services;
 
-import guru.springframework.projectLombock.model.Beer;
-import guru.springframework.projectLombock.model.BeerStyle;
+import guru.springframework.springRestServices.model.Beer;
+import guru.springframework.springRestServices.model.BeerStyle;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

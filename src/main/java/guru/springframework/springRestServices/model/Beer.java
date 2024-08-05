@@ -1,4 +1,4 @@
-package guru.springframework.projectLombock.model;
+package guru.springframework.springRestServices.model;
 
 import lombok.Builder;
 import lombok.Data;

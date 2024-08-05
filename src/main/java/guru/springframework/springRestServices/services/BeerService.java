@@ -1,6 +1,6 @@
-package guru.springframework.projectLombock.services;
+package guru.springframework.springRestServices.services;
 
-import guru.springframework.projectLombock.model.Beer;
+import guru.springframework.springRestServices.model.Beer;
 
 import java.util.List;
 import java.util.UUID;

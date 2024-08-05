@@ -1,4 +1,4 @@
-package guru.springframework.projectLombock.model;
+package guru.springframework.springRestServices.model;
 
 public enum BeerStyle {
     LAGER, PILSNER, STOUT, GOSE, PORTER, ALE, WHEAT, IPA, PALE_ALE, SAISON
