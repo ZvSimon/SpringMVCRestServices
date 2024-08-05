@@ -19,14 +19,20 @@ import java.util.UUID;
 public class BeerController {
     private final BeerService beerService;
 
+    @PutMapping("/{beerId}")
+    public ResponseEntity<Beer>updateById(@PathVariable("beerId")UUID beerId,@RequestBody Beer beer){
+        beerService.updateBeer(beerId,beer);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
     @PostMapping
     public ResponseEntity<Beer> handlePost(@RequestBody Beer beer) {
         Beer savedBeer = beerService.saveNewBeer(beer);
 
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Location","api/v1/beer/"+savedBeer.getId().toString());
+        headers.add("Location", "api/v1/beer/" + savedBeer.getId().toString());
         return new ResponseEntity<>(headers, HttpStatus.CREATED);
     }
+
 
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<List<Beer>> listBeers() {
