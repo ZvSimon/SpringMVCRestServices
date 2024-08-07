@@ -1,6 +1,5 @@
 package guru.springframework.springRestServices.controllers;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import guru.springframework.springRestServices.model.Beer;
 import guru.springframework.springRestServices.services.BeerService;
@@ -12,7 +11,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultActions;
+
+import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.mockito.ArgumentMatchers.any;
@@ -24,7 +24,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(BeerController.class)
 class BeerControllerTest {
 
-
     @Autowired
     MockMvc mockMvc;
 
@@ -34,13 +33,12 @@ class BeerControllerTest {
     @MockBean
     BeerService beerService;
 
-    BeerServiceImpl beerServiceImpl;
+    private BeerServiceImpl beerServiceImpl;
 
     @BeforeEach
     void setUp() {
         beerServiceImpl = new BeerServiceImpl();
     }
-
 
     @Test
     void testCreateNewBeer() throws Exception {
@@ -48,7 +46,8 @@ class BeerControllerTest {
         beer.setVersion(null);
         beer.setId(null);
 
-        given(beerService.saveNewBeer(any(Beer.class))).willReturn(beerServiceImpl.listBeers().get(1));
+        Beer savedBeer = beerServiceImpl.listBeers().get(1);
+        given(beerService.saveNewBeer(any(Beer.class))).willReturn(savedBeer);
 
         mockMvc.perform(post("/api/v1/beer")
                         .accept(MediaType.APPLICATION_JSON)
@@ -57,21 +56,21 @@ class BeerControllerTest {
                 .andExpect(status().isCreated())
                 .andExpect(header().exists("Location"));
     }
+
     @Test
     void testListBeers() throws Exception {
-        given(beerService.listBeers()).willReturn(beerServiceImpl.listBeers());
+        List<Beer> beers = beerServiceImpl.listBeers();
+        given(beerService.listBeers()).willReturn(beers);
 
         mockMvc.perform(get("/api/v1/beer")
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$[0].id", is(beerServiceImpl.listBeers().get(0).getId().toString())))
-                .andExpect(jsonPath("$[0].beerName", is(beerServiceImpl.listBeers().get(0).getBeerName())))
-                .andExpect(jsonPath("$[1].id", is(beerServiceImpl.listBeers().get(1).getId().toString())))
-                .andExpect(jsonPath("$[1].beerName", is(beerServiceImpl.listBeers().get(1).getBeerName())));
+                .andExpect(jsonPath("$[0].id", is(beers.get(0).getId().toString())))
+                .andExpect(jsonPath("$[0].beerName", is(beers.get(0).getBeerName())))
+                .andExpect(jsonPath("$[1].id", is(beers.get(1).getId().toString())))
+                .andExpect(jsonPath("$[1].beerName", is(beers.get(1).getBeerName())));
     }
-
-
 
     @Test
     void getBeerById() throws Exception {
@@ -85,6 +84,5 @@ class BeerControllerTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.id", is(testBeer.getId().toString())))
                 .andExpect(jsonPath("$.beerName", is(testBeer.getBeerName())));
-
     }
 }
