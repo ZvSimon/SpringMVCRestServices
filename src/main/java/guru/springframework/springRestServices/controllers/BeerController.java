@@ -33,7 +33,7 @@ public class BeerController {
     }
     @PutMapping("/{beerId}")
     public ResponseEntity<Beer>updateById(@PathVariable("beerId")UUID beerId,@RequestBody Beer beer){
-        beerService.updateBeer(beerId,beer);
+        beerService.updateBeerById(beerId,beer);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
     @PostMapping

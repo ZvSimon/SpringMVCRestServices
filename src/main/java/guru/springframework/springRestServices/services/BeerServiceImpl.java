@@ -53,7 +53,7 @@ public class BeerServiceImpl implements BeerService {
     }
 
     @Override
-    public void updateBeer(UUID beerId, Beer beer) {
+    public void updateBeerById(UUID beerId, Beer beer) {
         Beer beerToUpdate = beerMap.get(beerId);
         beerToUpdate.setBeerName(beer.getBeerName());
         beerToUpdate.setVersion(beer.getVersion());
